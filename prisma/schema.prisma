@@ -5,6 +5,7 @@ datasource db {
   provider = "postgresql"
   url      = "postgresql://postgres:walkman@localhost:5432/nextjs"
 }
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -14,4 +15,12 @@ model User {
   createdAt DateTime @default(now())
   email     String   @unique
   name      String?
+}
+
+model Work {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  title     String
+  content   String
+  authorId  Int
 }
