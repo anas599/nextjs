@@ -1,6 +1,12 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-export default function Home() {
+import { useSession } from 'next-auth/react';
+
+export default function Component() {
+  const { data: session, status } = useSession();
+  console.log(status);
+
   return (
     <>
       <header className="m-3">
@@ -21,6 +27,21 @@ export default function Home() {
         >
           User
         </Link>
+        {status === 'authenticated' ? (
+          <Link
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-3 my-3"
+            href="/api/auth/signout"
+          >
+            Sign Out
+          </Link>
+        ) : (
+          <Link
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-3 my-3"
+            href="/api/auth/signin"
+          >
+            Sign In
+          </Link>
+        )}
       </nav>
     </>
   );
