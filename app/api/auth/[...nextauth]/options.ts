@@ -17,7 +17,7 @@ export const options: NextAuthOptions = {
             async authorize(credentials) {
                 // this is where you would call an API route to authenticate with credentials
 
-                const user = { id: String(1), name: 'JSmith', email: 'smith@mail.com', password: 'password' }
+                const user = { id: String(1), name: 'anas599@yahoo.com', email: 'anas599@yahoo.com', password: '111111' }
                 if (credentials?.username === user.name && credentials?.password === user.password) {
                     return user
                 }else{
