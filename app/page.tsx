@@ -5,7 +5,8 @@ import { useSession } from 'next-auth/react';
 
 export default function Component() {
   const { data: session, status } = useSession();
-  console.log(status);
+  console.log(session?.user?.name);
+  const nameAc = session?.user?.name;
 
   return (
     <>
@@ -42,6 +43,13 @@ export default function Component() {
             Sign In
           </Link>
         )}
+        <Link
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-3 my-3"
+          href="/about"
+        >
+          About
+        </Link>
+        <p className="m-3"> logged in as: {nameAc}</p>
       </nav>
     </>
   );
