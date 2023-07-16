@@ -11,8 +11,8 @@ export default function Component() {
   return (
     <>
       <header className="m-3">
-        <h1 className="text">HEY THERE IM ANAS ALSAMMARRAIE</h1>
-        <h2>IM A Software Developer LOCATED IN AMMAN, Jordan</h2>
+        <h1 className="text">This is new app in next js</h1>
+        <h2>To display crypto blog along side comments</h2>
         <p>
           I have experience in React js, JavaScript, HTML/CSS, Ruby on Rails,
           and Python, as well as certification in AWS Cloud Practitioner with
@@ -21,7 +21,7 @@ export default function Component() {
           efficiency, with expertise in and .
         </p>
       </header>
-      <nav>
+      {/* <nav>
         <Link
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-3 my-3"
           href="/user"
@@ -50,7 +50,13 @@ export default function Component() {
           About
         </Link>
         <p className="m-3"> logged in as: {nameAc}</p>
-      </nav>
+        <Link
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-3 my-3"
+          href="/crypto"
+        >
+          Crypto
+        </Link>
+      </nav> */}
     </>
   );
 }
