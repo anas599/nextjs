@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-
+import navBar from './component/navBar'
 const prisma = new PrismaClient()
 
 async function main() {
