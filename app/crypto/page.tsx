@@ -1,5 +1,4 @@
 import axios from 'axios';
-import * as MaterialDesign from 'react-icons/fa';
 import { CryptoIcon } from './iconprop';
 
 async function crypto() {
@@ -21,10 +20,6 @@ async function crypto() {
           return (
             <div key={crypto.symbol}>
               <p>Name: {crypto.name}</p>
-              {/* if crypto.name is undefined return loading else return Cryptoicon name = crrypt.name */}
-              {/* <CryptoIcon name={crypto.name} /> */}
-
-              {/* <CryptoIcon name={crypto.name}></CryptoIcon> */}
               <p>Symbol: {crypto.symbol}</p>
               <p>Price: {crypto.quote.JOD.price} JOD</p>
               <p>Volume: {crypto.quote.JOD.volume_24h}</p>
