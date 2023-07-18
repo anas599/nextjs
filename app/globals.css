@@ -11,3 +11,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.w-30vw {
+    width: 30vw;
+}
