@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { CryptoIcon } from './iconprop';
 
 async function crypto() {
