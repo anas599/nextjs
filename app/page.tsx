@@ -1,21 +1,24 @@
-'use client';
+// 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import Top3 from './component/top3';
 import Header from './component/header';
-
+import CoinMC from './crypto/fetchCoinMC';
 export default function Component() {
-  const { data: session, status } = useSession();
-  console.log(session?.user?.name);
-  const nameAc = session?.user?.name;
+  // const { data: session, status } = useSession();
+  // console.log(session?.user?.name);
+  // const nameAc = session?.user?.name;
+  let price = null;
+  let price1 = null;
+  let price2 = null;
 
   return (
     <>
       <header className="m-3">
         <Header />
       </header>
-      <h2>Best Cryto Currently</h2>
+      <h2>Top 3 Cryptocurrencies</h2>
       <div className="grid justify-items-center">
         <svg className="animate-bounce h-20 w-20 m-5">
           <svg
