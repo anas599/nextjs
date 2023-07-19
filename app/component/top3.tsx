@@ -1,6 +1,6 @@
 import * as Icon from 'react-icons/fa';
 import axios from 'axios';
-import Image from 'next/image';
+import formatNumber from '../action/formatNumber';
 
 async function Top3() {
   const apiKey = '7974008e-e711-40f4-8b21-42c19b00e602';
@@ -44,28 +44,23 @@ async function Top3() {
                 )}
                 <p className="p-3">
                   Price:
-                  {crypto.quote.USD.price.toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 0,
-                    style: 'currency',
-                    currency: 'USD',
-                  })}
+                  {formatNumber(
+                    crypto.quote.USD.price.toLocaleString('en-US', {
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0,
+                      style: 'currency',
+                      currency: 'USD',
+                    }),
+                  )}
                 </p>
                 <p className="p-3">
-                  Volume 24h:{' '}
-                  {crypto.quote.USD.volume_24h.toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 0,
-                    style: 'currency',
-                    currency: 'USD',
-                  })}
+                  Volume 24h: {formatNumber(crypto.quote.USD.volume_24h)}
                 </p>
                 <p className="p-3">
-                  Total supply: {crypto.total_supply.toLocaleString()}
+                  Total supply: {formatNumber(crypto.total_supply)}
                 </p>
                 <p className="p-3">
-                  Circulating supply:{' '}
-                  {crypto.circulating_supply.toLocaleString()}
+                  Circulating supply: {formatNumber(crypto.circulating_supply)}
                 </p>
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-full group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
                   <span className="rounded-full relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0">
