@@ -6,10 +6,6 @@ import Top3 from './component/top3';
 import Header from './component/header';
 import CoinMC from './crypto/fetchCoinMC';
 export default function Component() {
-  let price = null;
-  let price1 = null;
-  let price2 = null;
-
   return (
     <>
       <header>
