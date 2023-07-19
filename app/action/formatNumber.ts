@@ -15,5 +15,4 @@ const map = [
 
   return num
 }
-console.log(formatNumber(1234567890));
 export default formatNumber;

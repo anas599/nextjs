@@ -16,8 +16,6 @@ async function crypto() {
       <div>
         <CryptoIcon name="FaAngry" />
         {response.data.data.map((crypto: any) => {
-          console.log('Crypto name:', typeof crypto.name);
-
           return (
             <div key={crypto.symbol}>
               <p>Name: {crypto.name}</p>
