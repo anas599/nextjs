@@ -78,7 +78,7 @@
 
   },
 
-  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "description": "Crypto blog, DJ app is an app that allows you to keep track of your crypto portfolio and earnings for the latest prices",
 
   "main": "next.config.js",
 

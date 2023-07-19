@@ -35,7 +35,6 @@ const Navbar = () => {
               <span className="sr-only">Open user menu</span>
               <MaterialDesign.FaUserCircle className="w-8 h-8 text-gray-200" />
             </button>
-
             {isDropdownOpen && (
               <div
                 id="dropdownAvatar "
