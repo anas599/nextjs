@@ -6,19 +6,32 @@ import Top3 from './component/top3';
 import Header from './component/header';
 import CoinMC from './crypto/fetchCoinMC';
 export default function Component() {
-  // const { data: session, status } = useSession();
-  // console.log(session?.user?.name);
-  // const nameAc = session?.user?.name;
   let price = null;
   let price1 = null;
   let price2 = null;
 
   return (
     <>
-      <header className="m-3">
+      <header>
         <Header />
       </header>
-      <h2>Top 3 Cryptocurrencies</h2>
+      <div
+        className="drop-shadow-lg
+        text-center
+        text-5xl
+        font-semibold
+        bg-gradient-to-r
+        bg-clip-text
+        text-transparent
+        from-indigo-500
+        via-purple-500
+        to-indigo-500
+        animate-text
+        h-max
+        p-5"
+      >
+        Top 3 Cryptocurrencies
+      </div>{' '}
       <div className="grid justify-items-center">
         <svg className="animate-bounce h-20 w-20 m-5">
           <svg
@@ -42,7 +55,6 @@ export default function Component() {
           </svg>
         </svg>
       </div>
-
       <Top3 />
     </>
   );
