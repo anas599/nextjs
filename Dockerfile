@@ -11,7 +11,11 @@ RUN npm install
 
 # Copy the rest of the application files to the container
 COPY . .
-
+# ENV PGHOST=host.docker.internal
+# ENV PGPORT=5432
+# ENV PGDATABASE=nextjs
+# ENV PGUSER=postgres
+# ENV PGPASSWORD=walkman
 # Build the Next.js app for production
 RUN npm run build
 
