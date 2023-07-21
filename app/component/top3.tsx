@@ -36,7 +36,7 @@ async function Top3() {
                     style={{ fill: 'url(#myGradient)' }}
                   />
                 )}
-                {crypto.name === 'Tether' && (
+                {crypto.name === 'Tether USDt' && (
                   <Icon.FaDollarSign
                     className="text-9xl p-3"
                     style={{ fill: 'url(#myGradient)' }}

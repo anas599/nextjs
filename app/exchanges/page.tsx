@@ -11,7 +11,6 @@ async function exchanges() {
       },
     });
     const data = Object.values(response.data.data);
-    console.log(data); // Return the data from the response
     return (
       <>
         {data.map((exchange: any) => (
