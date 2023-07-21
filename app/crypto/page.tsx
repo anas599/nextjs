@@ -1,6 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import axios from 'axios';
-
-import { CryptoIcon } from './iconprop';
 
 async function crypto() {
   const apiMarket =
@@ -14,10 +13,7 @@ async function crypto() {
     // console.log(response.data.data); // Return the data from the response
     return (
       <div>
-        <CryptoIcon name="FaAngry" />
         {response.data.data.map((crypto: any) => {
-          console.log('Crypto name:', typeof crypto.name);
-
           return (
             <div key={crypto.symbol}>
               <p>Name: {crypto.name}</p>
