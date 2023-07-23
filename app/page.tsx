@@ -5,6 +5,7 @@ import { useSession } from 'next-auth/react';
 import Top3 from './component/top3';
 import Header from './component/header';
 import CoinMC from './crypto/fetchCoinMC';
+import PopUpCrypto from './component/popupCrypto';
 export default function Component() {
   return (
     <>
@@ -28,6 +29,7 @@ export default function Component() {
       >
         Top 3 Cryptocurrencies
       </div>{' '}
+      <PopUpCrypto />
       <div className="grid justify-items-center">
         <svg className="animate-bounce h-20 w-20 m-5">
           <svg
