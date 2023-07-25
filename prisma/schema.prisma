@@ -9,12 +9,13 @@ datasource db {
 }
 
 model User {
-  id        Int       @id @default(autoincrement())
-  createdAt DateTime  @default(now())
-  email     String    @unique
-  name      String?
-  password  String
-  Comment   Comment[]
+  id          Int           @id @default(autoincrement())
+  createdAt   DateTime      @default(now())
+  email       String        @unique
+  name        String?
+  password    String
+  CoinComment CoinComment[]
+  Comment     Comment[]
 }
 
 model Work {
@@ -25,11 +26,23 @@ model Work {
 }
 
 model Comment {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  content   String
-  authorId  Int
-  author    User     @relation(fields: [authorId], references: [id])
-  upvote    Int      @default(0)
-  downvote  Int      @default(0)
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  content       String
+  authorId      Int
+  upvote        Int      @default(0)
+  downvote      Int      @default(0)
+  coincommentId String
+  author        User     @relation(fields: [authorId], references: [id])
+}
+
+model CoinComment {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  content       String
+  authorId      Int
+  coincommentId String
+  upvote        Int      @default(0)
+  downvote      Int      @default(0)
+  author        User     @relation(fields: [authorId], references: [id])
 }

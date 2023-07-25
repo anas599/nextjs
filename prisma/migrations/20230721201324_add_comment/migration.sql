@@ -15,6 +15,7 @@ CREATE TABLE "Comment" (
     "authorId" INTEGER NOT NULL,
     "upvote" INTEGER NOT NULL DEFAULT 0,
     "downvote" INTEGER NOT NULL DEFAULT 0,
+    "coinId" TEXT NOT NULL,
 
     CONSTRAINT "Comment_pkey" PRIMARY KEY ("id")
 );
