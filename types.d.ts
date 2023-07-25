@@ -6,12 +6,8 @@ type Crypto1 = {
     "symbol": string,
     "current_price": number,
     "total_volume": number,
-    "email": string,
-    "phone": string,
-    "website": string,
-    "company": {
-        "name": string,
-        "catchPhrase": string,
-        "bs": string
+    "market_cap": number,
+    "description": {
+        "en": string
     }
 }
