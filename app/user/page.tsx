@@ -1,12 +1,7 @@
-import { Prisma } from '@prisma/client';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
 export default async function user() {
-  const prisma = new PrismaClient();
-
-  // ... you will write your Prisma Client queries here
   const allUsers = await prisma.user.findMany();
-  //   const userData = JSON.stringify(allUsers);
   return (
     <div>
       <Link

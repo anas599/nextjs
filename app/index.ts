@@ -1,10 +1,7 @@
-import { PrismaClient } from '@prisma/client'
-import navBar from './component/navBar'
-const prisma = new PrismaClient()
+import { prisma } from "@/lib/prisma"
 
 async function main() {
-  // ... you will write your Prisma Client queries here
-  const allUsers = await prisma.user.findMany()
+
 
 }
 
