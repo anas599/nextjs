@@ -9,5 +9,22 @@ type Crypto1 = {
     "market_cap": number,
     "description": {
         "en": string
+    },
+    "image": {
+        "large": string
+    },
+    "market_data": {
+        "current_price": {
+            "usd": number
+        },
+        "total_volume": {
+            "usd": number
+        },
+        "market_cap": {
+            "usd": number
+        }
     }
+}
+type Image = {
+    "large": string
 }
