@@ -1,5 +1,8 @@
 type Crypto1 = {
     "id": number,
+    image: {
+    large: string
+  },
     "image": String,
     "name": string,
     "username": string,
@@ -10,9 +13,9 @@ type Crypto1 = {
     "description": {
         "en": string
     },
-    "image": {
-        "large": string
-    },
+    // "image": {
+    //     "large": string
+    // },
     "market_data": {
         "current_price": {
             "usd": number
