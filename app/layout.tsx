@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import { NextAuthProvider } from './context/NextAuthProvider';
 import Navbar from './component/navBar';
 const inter = Inter({ subsets: ['latin'] });
-import { SessionProvider } from 'next-auth/react';
 export const metadata = {
   title: 'Crypto Blog',
   description: 'Track your Cryptocurrency profits easier',
