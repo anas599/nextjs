@@ -1,5 +1,7 @@
 'use client';
 import { useState } from 'react';
+import { useSession } from 'next-auth/react';
+
 type Params = {
   params: {
     id: string;
@@ -7,6 +9,10 @@ type Params = {
 };
 
 function AddForm({ params: { id } }: Params) {
+  const { data: session, status } = useSession();
+  const nameAc = session?.user?.name;
+  const emailAc = session?.user?.email;
+  const idAc = +session?.user?.id;
   const [content, setComment] = useState('');
 
   const handleSubmit = async (event: any) => {
@@ -14,7 +20,7 @@ function AddForm({ params: { id } }: Params) {
     const commentData = {
       content: content,
       coincommentId: id,
-      authorId: 1,
+      authorId: idAc,
     };
 
     try {
