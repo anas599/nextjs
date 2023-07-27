@@ -94,7 +94,7 @@ export default async function CryptoPage({ params: { id } }: Params) {
   );
 }
 
-export async function oiho(context: any) {
+async function getProp(context: any) {
   const id = context.params.id;
 
   const cryptoData = await getSingleCrypto(id);
