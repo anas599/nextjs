@@ -15,7 +15,7 @@ export async function generateMetadata({
     description: `This is the page of ${crypto.name}`,
   };
 }
-async function getArtist({ params: { id } }: Params) {
+async function getComment({ params: { id } }: Params) {
   try {
     const res = await fetch(`http://localhost:3000/api/`); //when deployed, change to the domain name
     if (!res.ok) {
@@ -36,11 +36,12 @@ import type { Metadata } from 'next';
 import formatNumber from '../../action/formatNumber';
 import AddForm from '@/app/component/addForm';
 import PopUpCrypto from '@/app/component/popupCrypto';
+import { FaArrowCircleUp, FaArrowCircleDown } from 'react-icons/fa';
 
 export default async function CryptoPage({ params: { id } }: Params) {
   const cryptoData: Promise<Crypto1> = getSingleCrypto(id);
   const crypto = await cryptoData;
-  const mycomment = await getArtist({ params: { id } });
+  const mycomment = await getComment({ params: { id } });
   const filterComment = mycomment.filter(
     (item: any) => item.coincommentId === id,
   );
@@ -74,6 +75,16 @@ export default async function CryptoPage({ params: { id } }: Params) {
             <div className="m-3" key={comment.id}>
               <h2>Date : {comment.createdAt}</h2>
               <h3> Comment : {comment.content}</h3>
+              <div className="flex gap-2  items-center ">
+                <div className="flex gap-2 items-center cursor-pointer border-2 border-lime-500 rounded-full p-1 text-lime-500">
+                  <FaArrowCircleUp className="text-lime-500" />
+                  {comment.upvote}
+                </div>
+                <div className="flex gap-2  items-center cursor-pointer border-2 border-red-600 rounded-full p-1 text-red-600 ">
+                  <FaArrowCircleDown className="text-red-600" />
+                  {comment.downvote}
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -87,7 +98,7 @@ export async function getServerProps(context: any) {
   const id = context.params.id;
 
   const cryptoData = await getSingleCrypto(id);
-  const mycomment = await getArtist({ params: { id } });
+  const mycomment = await getComment({ params: { id } });
   const filterComment = mycomment.filter(
     (item: any) => item.coincommentId === id,
   );
