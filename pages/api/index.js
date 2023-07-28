@@ -11,6 +11,17 @@ async function handler(req, res) {
   } else if (req.method === 'POST') {
     const newComment = await prisma.coinComment.create({ data: req.body });
     res.status(201).json(newComment);
+  } else if (req.method === 'PUT') {
+    const voteup = await prisma.coinComment.update({
+      where: {
+        coincommentId: crypto.id,
+      },
+      data: {
+        voteup: {
+          increment: 1,
+        },
+      },
+    });
   } else {
     res.status(405).end(); // Method Not Allowed
   }
