@@ -15,7 +15,6 @@ model User {
   name        String?
   password    String
   CoinComment CoinComment[]
-  Comment     Comment[]
 }
 
 model Work {
@@ -23,17 +22,6 @@ model Work {
   createdAt DateTime @default(now())
   title     String
   content   String
-}
-
-model Comment {
-  id            Int      @id @default(autoincrement())
-  createdAt     DateTime @default(now())
-  content       String
-  authorId      Int
-  upvote        Int      @default(0)
-  downvote      Int      @default(0)
-  coincommentId String
-  author        User     @relation(fields: [authorId], references: [id])
 }
 
 model CoinComment {
