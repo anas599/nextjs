@@ -21,7 +21,7 @@ async function Top3() {
             className={`mx-auto flex max-w-screen-sm items-center justify-center`}
             key={crypto.id}
           >
-            <div className="bg-gradient-to-r from-purple-600 to-blue-500 p-1 rounded-t-lg m-3 shadow-lg">
+            <div className="bg-gradient-to-r from-purple-600 to-blue-500 p-1 rounded-t-lg m-3 shadow-lg ">
               <div className="flex items-center justify-center bg-gray-800 back flex-col p-3 w-30vw text-center">
                 <h3 className="text-4xl p-3">{crypto.name}</h3>
                 {crypto.name === 'Bitcoin' && (

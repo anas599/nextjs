@@ -13,62 +13,91 @@ function PopUpCrypto() {
   };
 
   return (
-    <>
+    <div>
       <button
-        className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        data-modal-target="staticModal"
+        data-modal-toggle="staticModal"
+        className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         type="button"
         onClick={() => setShowModal(true)}
       >
-        Open regular modal
+        Toggle modal
       </button>
-      {showModal ? (
+
+      {showModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+          id="staticModal"
+          data-modal-backdrop="static"
+          tabIndex={-1}
+          aria-hidden="true"
+          className="fixed top-0 left-0 right-0 z-50 w-full h-full flex items-center justify-center"
           onClick={closeModal}
         >
-          <div className="relative w-full h-full max" onClick={stopPropagation}>
-            {/*content*/}
-            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full h-full bg-white outline-none focus:outline-none">
-              {/*header*/}
-              <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                <h3 className="text-3xl font-semibold">Modal Title</h3>
-                <button
-                  className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                  onClick={closeModal}
+          <div className="bg-white rounded-lg shadow-lg p-4 w-full max-w-md mx-auto">
+            <div className="relative">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                Static modal
+              </h3>
+              <button
+                type="button"
+                className="absolute top-2 right-2 text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-hide="staticModal"
+                onClick={closeModal}
+              >
+                <svg
+                  className="w-3 h-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
                 >
-                  <span className="bg-transparent text-black opacity-5 h-100 w-6 text-2xl block outline-none focus:outline-none">
-                    ×
-                  </span>
-                </button>
-              </div>
-              {/*body*/}
-              <div className="relative p-6 flex-auto">
-                <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                  I always felt like I could do anything. That’s the main
-                </p>
-              </div>
-              {/*footer*/}
-              <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                <button
-                  className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                  type="button"
-                  onClick={closeModal}
-                >
-                  Close
-                </button>
-                <button
-                  className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                  type="button"
-                  onClick={closeModal}
-                >
-                  Save Changes
-                </button>
-              </div>
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                  />
+                </svg>
+                <span className="sr-only">Close modal</span>
+              </button>
+            </div>
+            <div className="p-6 space-y-6">
+              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                With less than a month to go before the European Union enacts
+                new consumer privacy laws for its citizens, companies around the
+                world are updating their terms of service agreements to comply.
+              </p>
+              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                The European Union’s General Data Protection Regulation
+                (G.D.P.R.) goes into effect on May 25 and is meant to ensure a
+                common set of data rights in the European Union. It requires
+                organizations to notify users as soon as possible of high-risk
+                data breaches that could personally affect them.
+              </p>
+            </div>
+            <div className="flex items-center space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+              <button
+                data-modal-hide="staticModal"
+                type="button"
+                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onClick={closeModal}
+              >
+                I accept
+              </button>
+              <button
+                data-modal-hide="staticModal"
+                type="button"
+                className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+                onClick={closeModal}
+              >
+                Decline
+              </button>
             </div>
           </div>
         </div>
-      ) : null}
-    </>
+      )}
+    </div>
   );
 }
 
