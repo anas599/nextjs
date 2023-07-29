@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={`${inter.className} bg-slate-800 text-slate-100 mx-auto`}
+        className={`${inter.className} middleContent bg-scroll text-slate-100 mx-auto`}
       >
         <NextAuthProvider>
           <Navbar />
