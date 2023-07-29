@@ -6,6 +6,8 @@ import Top3 from './component/top3';
 import Header from './component/header';
 import CoinMC from './crypto/fetchCoinMC';
 import PopUpCrypto from './component/popupCrypto';
+import MiddleContent from './component/middleContent';
+
 export default function Component() {
   return (
     <>
@@ -30,7 +32,7 @@ export default function Component() {
         Top 3 Cryptocurrencies
       </div>{' '}
       <PopUpCrypto />
-      <div className="grid justify-items-center">
+      <div className="grid justify-items-center ">
         <svg className="animate-bounce h-20 w-20 m-5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -54,6 +56,7 @@ export default function Component() {
         </svg>
       </div>
       <Top3 />
+      <MiddleContent />
     </>
   );
 }
