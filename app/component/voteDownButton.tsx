@@ -1,10 +1,11 @@
 'use client';
 import React from 'react';
+import { FaArrowCircleDown } from 'react-icons/fa';
+import { useState } from 'react';
 
 function VoteButton({ params }: any) {
-  // Destructure params from props
+  const [downvoteCount, setDownVote] = useState(params.comment.upvote); // Initialize state with the current upvote count
   const voteDownButton = async () => {
-    // console.log(params.comment); // Log params.comment instead of comment
     try {
       const response = await fetch(`/api/coinComment/votedown`, {
         method: 'POST',
@@ -23,18 +24,26 @@ function VoteButton({ params }: any) {
         throw error;
       }
       const data = await response.json();
+      setDownVote(data.upvote); // Update the upvote count state with the new count from the server
     } catch (error) {
       if (error instanceof Error) {
         console.error('Failed to vote down:', error.message);
-        if ('response' in error) {
-          console.error('Response status:', error.response.status);
-          console.error('Response body:', error.response.data);
-        }
+        // if ('response' in error) {
+        //   console.error('Response status:', error.response.status);
+        //   console.error('Response body:', error.response.data);
+        // }
       }
     }
   };
 
-  return <button onClick={voteDownButton}>Vote Down</button>;
+  return (
+    <div className="flex flex-row">
+      <button onClick={voteDownButton} className="p-2">
+        <FaArrowCircleDown />
+        <p>{downvoteCount}</p>
+      </button>
+    </div>
+  );
 }
 
 export default VoteButton;

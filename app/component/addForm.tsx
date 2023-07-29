@@ -15,7 +15,7 @@ function AddForm({ params: { id } }: Params) {
   // @ts-ignore
   const idAc = +session?.user?.id;
   const [content, setComment] = useState('');
-
+  // console.log(idAc);
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     const commentData = {
@@ -39,7 +39,6 @@ function AddForm({ params: { id } }: Params) {
       }
 
       const data = await res.json();
-      console.log(data);
       setComment(''); // Clear the input field
     } catch (error) {
       console.error('An error occurred while posting the comment.', error);

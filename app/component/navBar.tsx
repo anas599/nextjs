@@ -9,6 +9,7 @@ const Navbar = () => {
 
   const nameAc = session?.user?.name;
   const emailAc = session?.user?.email;
+  console.log(session);
   const [open, setOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -50,7 +51,7 @@ const Navbar = () => {
                 >
                   <li>
                     <a
-                      href="#"
+                      href="./user"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Dashboard
@@ -113,12 +114,6 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              href="/user"
-              className="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-            >
-              User
-            </Link>
-            <Link
               href="/Cryptocurrencies"
               className="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
             >
@@ -163,7 +158,7 @@ const Navbar = () => {
                   >
                     <li>
                       <a
-                        href="#"
+                        href="/user"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         Dashboard
