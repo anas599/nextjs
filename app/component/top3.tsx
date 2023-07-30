@@ -15,14 +15,14 @@ async function Top3() {
     });
 
     return (
-      <section className="flex flex-row">
+      <section className="flex flex-col md:flex-row">
         {response.data.data.map((crypto: any) => (
           <div
-            className={`mx-auto flex max-w-screen-sm items-center justify-center`}
+            className={`mx-auto flex flex-col md:max-w-screen-sm items-center justify-center`}
             key={crypto.id}
           >
             <div className="bg-gradient-to-r from-purple-600 to-blue-500 p-1 rounded-t-lg m-3 shadow-lg ">
-              <div className="flex items-center justify-center bg-gray-800 back flex-col p-3 w-30vw text-center">
+              <div className="flex items-center justify-center bg-gray-800 back flex-col p-3 w-80vw md:w-30vw text-center">
                 <h3 className="text-4xl p-3">{crypto.name}</h3>
                 {crypto.name === 'Bitcoin' && (
                   <Icon.FaBitcoin
