@@ -14,16 +14,17 @@ async function Cryptocurrencies() {
   const cryptoData: Promise<Crypto[]> = getAllCryptos();
   const crypto = await cryptoData;
   return (
-    <div className="grid justify-center items-center justify-items-center align-content-center grid-cols-4 grid-rows-4 gap-x-4 gap-y-4 pt-20">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 justify-items-center items-center content-center pt-20">
       {crypto.map((crypto: any) => (
         <Link
           href="/Cryptocurrencies/[id]"
           as={`/Cryptocurrencies/${crypto.id}`}
           key={crypto.id}
+          className="glass flex items-center content-center justify-center"
         >
           <div
             id={crypto.id}
-            className="flex flex-col justify-center glow-blue-100"
+            className="grid justify-center glow-blue-100 justify-items-center p-4"
           >
             <Image
               src={crypto.image}
@@ -32,7 +33,7 @@ async function Cryptocurrencies() {
               height={50}
               className="rounded-lg"
             />
-            <p>Name: {crypto.name}</p>
+            <p>{crypto.name}</p>
             <p>Symbol: {crypto.symbol}</p>
             <p>Price: {crypto.current_price} $</p>
             <p>Volume: {formatNumber(crypto.total_volume)}</p>
