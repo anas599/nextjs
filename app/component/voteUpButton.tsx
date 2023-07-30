@@ -37,7 +37,7 @@ function VoteButton({ params }: any) {
   };
   return (
     <div>
-      <button onClick={voteUp} className="p-2 con">
+      <button onClick={voteUp} className="p-2">
         <FaArrowCircleUp />
       </button>
       <p>{upvoteCount}</p>
