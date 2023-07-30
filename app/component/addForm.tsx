@@ -28,7 +28,7 @@ function AddForm({ params: { id } }: Params) {
 
     try {
       const res = await fetch(
-        'https://dev.d1ag4lutfl0s3j.amplifyapp.com/api/',
+        'https://aws-deploy.d1ag4lutfl0s3j.amplifyapp.com//api/',
         {
           //when deployed, change to the domain name
           method: 'POST',
