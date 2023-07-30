@@ -21,10 +21,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       }
       catch (error) {
   console.error('Failed to vote down:', error);
-  if (error.response) {
-    console.error('Response status:', error.response.status);
-    console.error('Response body:', error.response.data);
-  }
+  // if (error.response) {
+  //   console.error('Response status:', error.response.status);
+  //   console.error('Response body:', error.response.data);
+  // }
   res.status(500).json({ error: 'Unable to vote down coin comment.' });
 }
     } else {
