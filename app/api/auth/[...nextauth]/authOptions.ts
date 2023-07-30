@@ -59,6 +59,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
+
     session: ({ session, token }) => {
       return {
         ...session,
@@ -68,6 +69,7 @@ export const authOptions: NextAuthOptions = {
           randomKey: token.randomKey,
         },
       };
+
     },
     jwt: ({ token, user }) => {
       if (user) {
@@ -81,4 +83,5 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
   },
+  secret: process.env.NEXTAUTH_SECRET,
 };
