@@ -28,7 +28,7 @@ export async function generateMetadata({
 }
 async function getComment({ params: { id } }: Params) {
   try {
-    const res = await fetch(`https://dev.d1ag4lutfl0s3j.amplifyapp.com//api/`); //when deployed, change to the domain name or vercel name
+    const res = await fetch(`https://dev.d1ag4lutfl0s3j.amplifyapp.com/api/`); //when deployed, change to the domain name or vercel name
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
