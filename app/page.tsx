@@ -17,7 +17,7 @@ export default function Component() {
       <div
         className="drop-shadow-lg
         text-center
-        text-5xl
+        text-3xl
         font-semibold
         bg-gradient-to-r
         bg-clip-text
@@ -31,7 +31,6 @@ export default function Component() {
       >
         Top 3 Cryptocurrencies
       </div>{' '}
-      <PopUpCrypto />
       <div className="grid justify-items-center ">
         <svg className="animate-bounce h-20 w-20 m-5">
           <svg
