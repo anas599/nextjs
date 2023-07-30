@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    DATABASE_URL: process.env.DATABASE_URL,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    SECRET: process.env.SECRET,
+    GOOGLE_ID: process.env.GOOGLE_ID,
+    GOOGLE_SECRET: process.env.GOOGLE_SECRET,
+    GITHUB_ID: process.env.GITHUB_ID,
+    GITHUB_SECRET: process.env.GITHUB_SECRET,
+    // Add any other environment variables you need
+  },
   images: {
     domains: [
       'assets.coingecko.com',
@@ -16,5 +26,4 @@ const nextConfig = {
     ],
   },
 };
-//assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579) on
 https: module.exports = nextConfig;
