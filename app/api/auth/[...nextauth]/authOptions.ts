@@ -82,6 +82,7 @@ export const authOptions: NextAuthOptions = {
           randomKey: u.randomKey,
         };
       }
+      console.log('token', token);
       return token;
     },
   },

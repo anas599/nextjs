@@ -9,11 +9,10 @@ const Navbar = () => {
 
   const nameAc = session?.user?.name;
   const emailAc = session?.user?.email;
-  console.log(session);
   const [open, setOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  console.log(status);
+  // console.log(status);
   const toggleMenu = () => {
     setOpen(!open);
   };
