@@ -59,6 +59,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
     secret: 'test',
+
   callbacks: {
 
     session: ({ session, token }) => {
