@@ -8,7 +8,7 @@ const nextConfig = {
     GOOGLE_SECRET: process.env.GOOGLE_SECRET,
     GITHUB_ID: process.env.GITHUB_ID,
     GITHUB_SECRET: process.env.GITHUB_SECRET,
-    // Add any other environment variables you need
+    DEPLOYDOMAIN: process.env.DEPLOYDOMAIN,
   },
   images: {
     domains: [
