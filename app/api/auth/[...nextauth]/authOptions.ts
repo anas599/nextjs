@@ -58,7 +58,7 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
-    secret: 'test',
+    secret: process.env.SECRET,
 
   callbacks: {
 
@@ -82,7 +82,7 @@ export const authOptions: NextAuthOptions = {
           randomKey: u.randomKey,
         };
       }
-      console.log('token', token);
+
       return token;
     },
   },
