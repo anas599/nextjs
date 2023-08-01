@@ -26,7 +26,7 @@ const MiddleContent = () => {
       </div>
       <div className="vertical-line"></div>
       <div className="horizontal-line "></div>
-      <div className="flex flex-col md:flex-row justify-center items-center pt-10 pb-10 shadowDrop border-l-2 border-b-2">
+      <div className="flex flex-col md:flex-row-reverse justify-center items-center pt-10 pb-10 shadowDrop border-l-2 border-b-2">
         <div className="w-full md:w-2/4 bg-gradient-to-r from-purple-800 via-violet-900 drop-shadow-md hover:drop-shadow-xl p-2 md:p-6">
           <h2 className="text-center md:text-left">
             Stay Ahead with Crypto Prices & Volume
@@ -42,7 +42,7 @@ const MiddleContent = () => {
           alt="Picture Chart"
           width={400}
           height={400}
-          className="rounded-3xl drop-shadow-lg mt-5 md:mt-0"
+          className="rounded-3xl drop-shadow-lg mt-5 mb-5 md:mt-0"
         />
       </div>
       <div className="flex flex-col-reverse md:flex-row justify-center items-center pt-10 pb-10 shadowDrop border-r-2 border-b-2">
@@ -61,10 +61,10 @@ const MiddleContent = () => {
           alt="Picture Chart"
           width={400}
           height={400}
-          className="rounded-3xl drop-shadow-lg mt-5 md:mt-0"
+          className="rounded-3xl drop-shadow-lg mt-5 mb-5 md:mt-0"
         />
       </div>
-      <div className="flex flex-col md:flex-row justify-center items-center pt-10 pb-10 shadowDrop border-l-2">
+      <div className="flex flex-col md:flex-row-reverse justify-center items-center pt-10 pb-10 shadowDrop border-l-2">
         <div className="flex justify-center items-center flex-col w-full md:w-2/4 bg-gradient-to-r from-purple-800 via-violet-900 drop-shadow-md hover:drop-shadow-xl p-2 md:p-6">
           <h2 className="text-center md:text-left">
             Discuss and add your comments and predictions within the
@@ -79,7 +79,7 @@ const MiddleContent = () => {
           alt="Picture Chart"
           width={400}
           height={400}
-          className="rounded-3xl drop-shadow-lg mt-5 md:mt-0"
+          className="rounded-3xl drop-shadow-lg mt-5 mb-5 md:mt-0"
         />
       </div>
     </section>
