@@ -2,6 +2,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { NextAuthProvider } from './context/NextAuthProvider';
 import Navbar from './component/navBar';
+import Footer from './component/footer';
 const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   title: 'Crypto Blog',
@@ -23,6 +24,7 @@ export default function RootLayout({
           <Navbar />
           {children}
         </NextAuthProvider>
+        <Footer />
       </body>
     </html>
   );
