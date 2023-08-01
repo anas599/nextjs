@@ -9,7 +9,23 @@
     padding: 10rem;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .headerBG {
+        padding: 10rem;
+        /* Adjust the padding for tablets */
+    }
+}
+
+/* Media query for phones */
+@media (max-width: 480px) {
+    .headerBG {
+        padding: 6rem;
+        /* Adjust the padding for phones */
+    }
 }
 
 .w-30vw {
