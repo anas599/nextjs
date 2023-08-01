@@ -28,10 +28,7 @@ export async function generateMetadata({
 }
 async function getComment({ params: { id } }: Params) {
   try {
-    const res = await fetch(
-      // `https://aws-deploy.d1ag4lutfl0s3j.amplifyapp.com/api/`,
-      `${process.env.DEPLOYDOMAIN}/api/`,
-    ); //when deployed, change to the domain name or vercel name
+    const res = await fetch(`${process.env.DEPLOYDOMAIN}/api/`); //when deployed, change to the domain name or vercel name
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
@@ -82,7 +79,7 @@ export default async function CryptoPage({ params: { id } }: Params) {
           <h2 className="text-center mb-10 text-xl">Comments</h2>
           {filterComment.map((comment: any) => (
             <>
-              <div className="  text-black dark:text-gray-200 p-4 antialiased flex max-w-lg ">
+              <div className="  text-black dark:text-gray-200 p-4 antialiased flex max-w-lg shadowFilter ">
                 <Image
                   className="rounded-full h-8 w-8 mr-2 mt-1 "
                   src={comment.userpic}

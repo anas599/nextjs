@@ -18,7 +18,7 @@ async function Top3() {
       <section className="flex flex-col md:flex-row">
         {response.data.data.map((crypto: any) => (
           <div
-            className={`mx-auto flex flex-col md:max-w-screen-sm items-center justify-center`}
+            className={`mx-auto flex flex-col md:max-w-screen-sm items-center justify-center `}
             key={crypto.id}
           >
             <div className="bg-gradient-to-r from-purple-600 to-blue-500 p-1 rounded-t-lg m-3 shadow-lg ">

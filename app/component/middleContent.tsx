@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 const MiddleContent = () => {
   return (
-    <section className="middleContent mt-10 mb-10 p-5">
+    <section className=" mt-10  p-5">
       <div
         className="drop-shadow-lg
       text-center

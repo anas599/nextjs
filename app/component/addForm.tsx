@@ -53,15 +53,15 @@ function AddForm({ params: { id } }: Params) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="z-50 absolute text-zinc-950  mx-6 my-6 flex flex-col items-center justify-center w-screen"
+      className="z-50 absolute text-zinc-950 mx-6 my-6 flex flex-col items-center justify-center sm:w-3/4 md:w-1/2 lg:w-1/3"
     >
-      <label className="flex flex-col justify-center items-center mb-2 text-sm font-medium text-gray-900 dark:text-white w-screen ">
-        Add your Prediction on analysis in a comment :
+      <label className="flex flex-col justify-center items-center mb-2 text-sm font-medium text-gray-900 dark:text-white w-full">
+        Add your Prediction and analysis in a comment:
         <input
           type="text"
           value={content}
           onChange={(e) => setComment(e.target.value)}
-          className="h-20 block p-2.5 w-1/2 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="h-20 block p-2.5 w-full sm:w-4/5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         />
       </label>
 
