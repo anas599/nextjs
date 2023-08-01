@@ -15,6 +15,7 @@ const nextConfig = {
       'assets.coingecko.com',
       'lh3.googleusercontent.com',
       's2.coinmarketcap.com',
+      'avatars.githubusercontent.com',
     ],
     remotePatterns: [
       {
