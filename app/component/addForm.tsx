@@ -27,14 +27,18 @@ function AddForm({ params: { id } }: Params) {
     };
 
     try {
-      const res = await fetch('http://localhost:3000/api/', {
-        //when deployed, change to the domain name
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      const res = await fetch(
+        // 'https://aws-deploy.d1ag4lutfl0s3j.amplifyapp.com/api/',
+        `${process.env.DEPLOYDOMAIN}/api/`,
+        {
+          //when deployed, change to the domain name
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(commentData),
         },
-        body: JSON.stringify(commentData),
-      });
+      );
 
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
