@@ -2,10 +2,9 @@ import Image from 'next/image';
 
 function Header() {
   return (
-    <section>
+    <section className="pt-18">
       <div className="relative headerBG text-right">
-        <h1>Track your Cryptocurrency profits easier</h1>
-        <h2>To display crypto blog alongside comments</h2>
+        <h1 className="text-2xl">Track your Cryptocurrency profits easier</h1>
       </div>
     </section>
   );
