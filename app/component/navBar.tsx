@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
-import Image from 'next/image';
 import * as MaterialDesign from 'react-icons/fa';
 const Navbar = () => {
   const { data: session, status } = useSession();
@@ -11,8 +10,6 @@ const Navbar = () => {
   const emailAc = session?.user?.email;
   const [open, setOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  // console.log(status);
   const toggleMenu = () => {
     setOpen(!open);
   };
