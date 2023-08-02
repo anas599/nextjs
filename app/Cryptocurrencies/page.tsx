@@ -1,9 +1,5 @@
-// import { useSession } from 'next-auth/react';
-// const { data: session, status } = useSession();
-// console.log(status);
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import axios from 'axios';
 import Link from 'next/link';
 import formatNumber from '../action/formatNumber';
 import getAllCryptos from '@/lib/getAllCryptos';
