@@ -3,7 +3,7 @@ import Image from 'next/image';
 import formatNumber from '../action/formatNumber';
 import Link from 'next/link';
 async function exchanges() {
-  const apiKey = '7974008e-e711-40f4-8b21-42c19b00e602';
+  const apiKey = process.env.COIN_MARKET_CAP_API_KEY;
   const apiExchanges =
     'https://pro-api.coinmarketcap.com/v1/exchange/info?slug=binance,coinbase-exchange,kraken,kucoin,bybit,okx,gate-io,huobi,bitget,lbank';
 
