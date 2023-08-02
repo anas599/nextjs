@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   title: 'Crypto Blog',
   description: 'Track your Cryptocurrency profits easier',
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={`${inter.className} middleContent bg-scroll text-slate-100 mx-auto`}
+        className={`${inter.className} middleContent bg-scroll text-slate-100 mx-auto min-h-screen relative`}
       >
         <NextAuthProvider>
           <Navbar />
