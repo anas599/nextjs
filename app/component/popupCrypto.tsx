@@ -1,8 +1,9 @@
-'use client';
 import { useState } from 'react';
-
-function PopUpCrypto() {
+import formatNumber from '../action/formatNumber';
+function PopUpCrypto({ price, name }: any) {
   const [showModal, setShowModal] = useState(false);
+  const [amountInDollars, setAmountInDollars] = useState('');
+  const [convertedAmount, setConvertedAmount] = useState('');
 
   const closeModal = () => {
     setShowModal(false);
@@ -12,16 +13,32 @@ function PopUpCrypto() {
     e.stopPropagation();
   };
 
+  const handleAmountChange = (e: any) => {
+    setAmountInDollars(e.target.value);
+  };
+
+  const convertAmount = () => {
+    const amount = parseFloat(amountInDollars);
+    if (!isNaN(amount)) {
+      const converted = amount / price;
+      setConvertedAmount(converted.toFixed(2));
+    } else {
+      setConvertedAmount('');
+    }
+  };
+
   return (
     <div>
       <button
         data-modal-target="staticModal"
         data-modal-toggle="staticModal"
-        className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-full group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
         type="button"
         onClick={() => setShowModal(true)}
       >
-        Toggle modal
+        <span className="rounded-full relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0">
+          Buy now!
+        </span>
       </button>
 
       {showModal && (
@@ -30,13 +47,16 @@ function PopUpCrypto() {
           data-modal-backdrop="static"
           tabIndex={-1}
           aria-hidden="true"
-          className="fixed top-0 left-0 right-0 z-50 w-full h-full flex items-center justify-center"
+          className="fixed top-0 left-0 right-0 z-50 w-full h-full flex items-center justify-center backdrop-filter backdrop-blur"
           onClick={closeModal}
         >
-          <div className="bg-white rounded-lg shadow-lg p-4 w-full max-w-md mx-auto">
+          <div
+            className="glass2 rounded-lg shadow-lg p-4 w-full max-w-md mx-auto"
+            onClick={stopPropagation}
+          >
             <div className="relative">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                Static modal
+                Crypto Converter
               </h3>
               <button
                 type="button"
@@ -63,36 +83,42 @@ function PopUpCrypto() {
               </button>
             </div>
             <div className="p-6 space-y-6">
-              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                With less than a month to go before the European Union enacts
-                new consumer privacy laws for its citizens, companies around the
-                world are updating their terms of service agreements to comply.
+              <p className="text-base leading-relaxed text-white dark:text-white">
+                Price:{' '}
+                {formatNumber(
+                  price.toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0,
+                    style: 'currency',
+                    currency: 'USD',
+                  }),
+                )}
               </p>
-              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                The European Union’s General Data Protection Regulation
-                (G.D.P.R.) goes into effect on May 25 and is meant to ensure a
-                common set of data rights in the European Union. It requires
-                organizations to notify users as soon as possible of high-risk
-                data breaches that could personally affect them.
-              </p>
-            </div>
-            <div className="flex items-center space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+              <div className="flex items-center justify-center flex-col">
+                <label className="mr-2">You pay:</label>
+                <br />
+                <input
+                  type="number"
+                  step="10.00"
+                  value={amountInDollars}
+                  onChange={handleAmountChange}
+                  className="border rounded py-1 px-2 text-cyan-950"
+                />
+              </div>
               <button
-                data-modal-hide="staticModal"
+                className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-full group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
                 type="button"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                onClick={closeModal}
+                onClick={convertAmount}
               >
-                I accept
+                <span className="rounded-full relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0">
+                  Convert
+                </span>
               </button>
-              <button
-                data-modal-hide="staticModal"
-                type="button"
-                className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
-                onClick={closeModal}
-              >
-                Decline
-              </button>
+              {convertedAmount === '' ? null : (
+                <h2 className="text-lg">
+                  You get: {convertedAmount} in {name}
+                </h2>
+              )}
             </div>
           </div>
         </div>
