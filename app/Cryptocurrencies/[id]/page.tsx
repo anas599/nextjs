@@ -1,5 +1,4 @@
 import getSingleCrypto from '@/lib/getSingleCrypto';
-import { useGlobalContext } from '../../context/store';
 import { Suspense } from 'react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
@@ -38,7 +37,6 @@ async function getComment({ params: { id } }: Params) {
   }
 }
 export default async function CryptoPage({ params: { id } }: Params) {
-  // const { datax, setDatax } = useGlobalContext();
   const cryptoData: Promise<Crypto1> = getSingleCrypto(id);
   const crypto = await cryptoData;
   const mycomment = await getComment({ params: { id } });
