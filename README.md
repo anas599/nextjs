@@ -1,34 +1,125 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- add logo image here with size medium and centered in the middle -->
 
-## Getting Started
+<div style="text-align: center;">
+  <img src="./public/logo.png" alt="Logo" width="150" height="150">
+</div>
+<br>
+# 📗 Table of Contents
 
-First, run the development server:
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-```bash
+# 📖 Crypto Blog <a name="about-project"></a>
+
+Crypto Blog: A Next.js web app with Prisma adapter for real-time cryptocurrency data. Engage in community-driven discussions, add predictions, and vote on comments. NextAuth ensures secure authentication. Stay informed and join the crypto community! 🚀💰
+**Crypto Blog**
+
+## 🛠 Built With <a name="built-with"></a>
+
+Nextjs 13
+Prisma PSQL
+
+### Tech Stack <a name="tech-stack"></a>
+
+> Nextjs 13
+
+<details>
+<summary>Nextjs</summary>
+  <ul>
+    <li><a href="https://nextjs.org/">Nextjs</a></li>
+  </ul>
+</details>
+
+### Key Features <a name="key-features"></a>
+
+- Real-time cryptocurrency data
+- Vote on comments.
+- NextAuth ensures secure authentication.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+- Crypto-blog
+
+### Prerequisites
+
+In order to run this project you need:
+
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [https://aws-deploy.d1ag4lutfl0s3j.amplifyapp.com//](https://aws-deploy.d1ag4lutfl0s3j.amplifyapp.com//) with your browser to see the result.
+### Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Clone this repository to your desired folder:
+cd Crypto-blog
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    git clone https://github.com/anas599/Crypto-blog.git
 
-## Learn More
+### Install
 
-To learn more about Next.js, take a look at the following resources:
+Install this project with:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+cd Crypto-blog
+npm i
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Usage
 
-## Deploy on Vercel
+npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>👥 Authors <a name="authors"></a>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+👤 **ANAS ALSAMMARRAIE**
+
+- GitHub: [@anas599](https://github.com/anas599)
+- Twitter: [@anas599](https://twitter.com/anas599)
+- LinkedIn: [anas1993](https://linkedin.com/in/anas1993)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- Add animation and transition
+- Add Buy using debit card
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⭐️ Show your support <a name="support"></a>
+
+> If you like the project Please do not hesitate if you have any questions
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+> I extend my gratitude to CoinGecko and Coinmarketcap for their API support.<br>
+> It has greatly improved our project's functionality.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

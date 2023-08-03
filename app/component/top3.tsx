@@ -1,24 +1,34 @@
 import * as Icon from 'react-icons/fa';
-import axios from 'axios';
 import formatNumber from '../action/formatNumber';
+import { useEffect, useState } from 'react';
+import Loading from '../component/loading';
+function Top3() {
+  const [data, setData] = useState(null);
 
-async function Top3() {
-  const apiKey = '7974008e-e711-40f4-8b21-42c19b00e602';
-  const apiMarket =
-    'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=3&convert=USD';
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch(`${process.env.DEPLOYDOMAIN}/api/coinTop3`);
 
-  try {
-    const response = await axios.get(apiMarket, {
-      headers: {
-        'X-CMC_PRO_API_KEY': apiKey,
-      },
-    });
+      if (res.ok) {
+        const data = await res.json();
+        setData(data);
+      } else {
+        console.error('Failed to fetch data');
+      }
+    }
+    fetchData();
+  }, []);
 
-    return (
-      <section className="flex flex-col md:flex-row">
-        {response.data.data.map((crypto: any) => (
+  if (!data) {
+    return <Loading />;
+  }
+  return (
+    <section className="flex flex-col md:flex-row">
+      {
+        // @ts-ignore
+        data.data.map((crypto: any) => (
           <div
-            className={`mx-auto flex flex-col md:max-w-screen-sm items-center justify-center`}
+            className={`mx-auto flex flex-col md:max-w-screen-sm items-center justify-center `}
             key={crypto.id}
           >
             <div className="bg-gradient-to-r from-purple-600 to-blue-500 p-1 rounded-t-lg m-3 shadow-lg ">
@@ -70,13 +80,10 @@ async function Top3() {
               </div>
             </div>
           </div>
-        ))}
-      </section>
-    );
-  } catch (error) {
-    console.error('Error fetching crypto data:', error);
-    throw error; // Throw the error to be handled by the caller
-  }
+        ))
+      }
+    </section>
+  );
 }
 
 export default Top3;

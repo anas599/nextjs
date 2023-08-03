@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/context/AuthProvider.js", "pages/api/index.js", "pages/api/coinComment/Users/listUsers.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/context/AuthProvider.js", "pages/api/index.js", "pages/api/coinComment/Users/listUsers.js", "app/Cryptocurrencies/loading.tsx2", "app/Cryptocurrencies/loading"],
   "exclude": ["node_modules"]
 }

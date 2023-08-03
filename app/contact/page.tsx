@@ -40,8 +40,8 @@ const ContactForm = () => {
   }
 
   return (
-    <section className="bg-white dark:bg-gray-900  h-screen">
-      <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+    <section className="bg-white dark:bg-gray-900  h-screen min-h-screen">
+      <div className="py-8  px-4 mx-auto max-w-screen-md min-h-screen">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white pt-20">
           Contact Us
         </h2>

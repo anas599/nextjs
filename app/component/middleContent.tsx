@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 const MiddleContent = () => {
   return (
-    <section className="middleContent mt-10 mb-10 p-5">
+    <section className=" mt-10  p-5">
       <div
         className="drop-shadow-lg
       text-center
@@ -42,7 +42,7 @@ const MiddleContent = () => {
           alt="Picture Chart"
           width={400}
           height={400}
-          className="rounded-3xl drop-shadow-lg mt-5 mb-5 md:mt-0"
+          className="rounded-3xl drop-shadow-lg mt-5 mb-5 md:mt-0 hover:border-2 border-purple-800 duration-300"
         />
       </div>
       <div className="flex flex-col-reverse md:flex-row justify-center items-center pt-10 pb-10 shadowDrop border-r-2 border-b-2">
@@ -61,7 +61,7 @@ const MiddleContent = () => {
           alt="Picture Chart"
           width={400}
           height={400}
-          className="rounded-3xl drop-shadow-lg mt-5 mb-5 md:mt-0"
+          className="rounded-3xl drop-shadow-lg mt-5 mb-5 md:mt-0 hover:border-2 border-purple-800 duration-300"
         />
       </div>
       <div className="flex flex-col md:flex-row-reverse justify-center items-center pt-10 pb-10 shadowDrop border-l-2">
@@ -79,7 +79,7 @@ const MiddleContent = () => {
           alt="Picture Chart"
           width={400}
           height={400}
-          className="rounded-3xl drop-shadow-lg mt-5 mb-5 md:mt-0"
+          className="rounded-3xl drop-shadow-lg mt-5 mb-5 md:mt-0 hover:border-2 border-purple-800 duration-300"
         />
       </div>
     </section>

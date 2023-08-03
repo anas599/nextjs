@@ -1,11 +1,6 @@
-// 'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useSession } from 'next-auth/react';
+'use client';
 import Top3 from './component/top3';
 import Header from './component/header';
-import CoinMC from './crypto/fetchCoinMC';
-import PopUpCrypto from './component/popupCrypto';
 import MiddleContent from './component/middleContent';
 
 export default function Component() {
@@ -27,10 +22,14 @@ export default function Component() {
         to-indigo-500
         animate-text
         h-max
-        p-5"
+        p-5
+        shadowFilter"
       >
         Top 3 Cryptocurrencies
       </div>{' '}
+      <div className="flex justify-center">
+        <div className="h-1 rounded-full w-1/3 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500"></div>{' '}
+      </div>
       <div className="grid justify-items-center ">
         <svg className="animate-bounce h-20 w-20 m-5">
           <svg
