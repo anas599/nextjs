@@ -28,7 +28,7 @@ function Cryptocurrencies() {
             href="/Cryptocurrencies/[id]"
             as={`/Cryptocurrencies/${crypto.id}`}
             key={crypto.id}
-            className="glass flex items-center content-center justify-center"
+            className="glass flex items-center content-center justify-center hover:bg-gray-700 hover:text-white dark:hover:bg-gray-700 dark:hover:text-white  duration-300"
           >
             <div
               id={crypto.id}
