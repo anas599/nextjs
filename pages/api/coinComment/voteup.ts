@@ -6,7 +6,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     try {
       const { coincommentId } = req.body;
-      console.log(coincommentId); // Add this line to log coincommentId
       const voteup = await prisma.coinComment.update({
         where: {
           id: coincommentId,
@@ -18,8 +17,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         },
       });
       res.status(200).json(voteup);
-    }
-    catch (error) {
+    } catch (error) {
       console.error('Failed to vote up:', error);
       // if (error.response) {
       //   console.error('Response status:', error.response.status);
@@ -29,7 +27,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
   } else {
     throw new Error(
-      `The HTTP ${req.method} method is not supported at this route.`
+      `The HTTP ${req.method} method is not supported at this route.`,
     );
   }
 };

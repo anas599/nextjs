@@ -6,7 +6,6 @@ async function fetchCryptoData() {
 
   try {
     const response = await axios.get(apiMarket);
-    // console.log(response.data); // Return the data from the response
 
     return response.data;
   } catch (error) {
