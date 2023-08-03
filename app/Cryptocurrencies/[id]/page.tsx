@@ -1,14 +1,13 @@
 import getSingleCrypto from '@/lib/getSingleCrypto';
+import { useGlobalContext } from '../../context/store';
 import { Suspense } from 'react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import formatNumber from '../../action/formatNumber';
 import AddForm from '@/app/component/addForm';
-import PopUpCrypto from '@/app/component/popupCrypto';
 import VoteButton from '@/app/component/voteUpButton';
 import VoteDownButton from '@/app/component/voteDownButton';
-import { format } from 'date-fns';
-
+import formatDate from '@/app/action/formatDate';
 type Params = {
   params: {
     id: string;
@@ -28,7 +27,7 @@ export async function generateMetadata({
 }
 async function getComment({ params: { id } }: Params) {
   try {
-    const res = await fetch(`${process.env.DEPLOYDOMAIN}/api/`); //when deployed, change to the domain name or vercel name
+    const res = await fetch(`${process.env.DEPLOYDOMAIN}/api/comments`);
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
@@ -38,11 +37,8 @@ async function getComment({ params: { id } }: Params) {
     console.error('An error occurred while fetching the data.', error);
   }
 }
-async function formatDate(date: string) {
-  const date1 = new Date(date);
-  return format(new Date(date), 'yyyy-MM-dd HH:mm:ss');
-}
 export default async function CryptoPage({ params: { id } }: Params) {
+  // const { datax, setDatax } = useGlobalContext();
   const cryptoData: Promise<Crypto1> = getSingleCrypto(id);
   const crypto = await cryptoData;
   const mycomment = await getComment({ params: { id } });
@@ -50,6 +46,7 @@ export default async function CryptoPage({ params: { id } }: Params) {
     mycomment?.length === undefined
       ? []
       : mycomment?.filter((item: any) => item.coincommentId === id);
+
   return (
     <>
       <section className="pt-20 grid justify-items-center gap-4 ">
@@ -112,8 +109,8 @@ export default async function CryptoPage({ params: { id } }: Params) {
             </>
           ))}
         </div>
+        <AddForm params={{ id }} />
       </section>
-      <AddForm params={{ id }} />
     </>
   );
 }
