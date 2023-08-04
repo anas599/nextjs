@@ -61,7 +61,7 @@ function AddForm({ params: { id } }: Params) {
         <div className="  text-black dark:text-gray-200 p-4 antialiased flex max-w-lg shadowFilter ">
           <Image
             className="rounded-full h-8 w-8 mr-2 mt-1 "
-            src={datax.userpic}
+            src={'/userIcon.svg'}
             alt="Profile image"
             width={50}
             height={50}
