@@ -1,9 +1,15 @@
-<!-- add logo image here with size medium and centered in the middle -->
-
 <div style="text-align: center;">
-  <img src="./public/logo.png" alt="Logo" width="150" height="150">
+  <img src="./public/logo.ico" alt="Logo" width="150" height="150">
 </div>
 <br>
+<div style="text-align: center;">
+  <img src="./public/snap1.png" alt="snapshot" width="250" >
+  <img src="./public/snap2.png" alt="snapshot" width="250" >
+  <img src="./public/snap3.png" alt="snapshot" width="250" >
+  <img src="./public/snap4.png" alt="snapshot" width="250" >
+</div>
+<br>
+
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
