@@ -14,7 +14,9 @@
 
     "start": "next start",
 
-    "lint": "next lint"
+    "lint": "next lint",
+
+    "cypress": "cypress open"
 
   },
 
@@ -91,6 +93,8 @@
   "devDependencies": {
 
     "@types/es6-promise": "^3.3.0",
+
+    "cypress": "^12.17.3",
 
     "prisma": "^4.16.2"
 
