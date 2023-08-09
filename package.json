@@ -16,7 +16,8 @@
 
     "lint": "next lint",
 
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "test:ci": "start-server-and-test 'npm start' 3000 'cypress run'"
 
   },
 
