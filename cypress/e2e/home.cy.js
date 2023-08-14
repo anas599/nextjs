@@ -1,6 +1,5 @@
 describe('Home', () => {
   it('should render navbar and top3 crypto', () => {
-    // Start from the index page
     cy.visit('http://localhost:3000/');
     cy.get('h1').contains('Track your Cryptocurrency profits easier');
     cy.get('div').contains('Top 3 Cryptocurrencies');
