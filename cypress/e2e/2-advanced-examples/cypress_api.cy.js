@@ -21,7 +21,6 @@ context('Cypress APIs', () => {
           // log the subject to the console
           console[method]('The subject is', subject);
 
-          // whatever we return becomes the new subject
           // we don't want to change the subject so
           // we return whatever was passed in
           return subject;
