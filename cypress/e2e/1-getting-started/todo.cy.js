@@ -16,12 +16,6 @@ describe('example to-do app', () => {
     // We'll store our item text in a variable so we can reuse it
     const newItem = 'Feed the cat';
 
-    // Let's get the input element and use the `type` command to
-    // input our new list item. After typing the content of our item,
-    // we need to type the enter key as well in order to submit the input.
-    // This input has a data-test attribute so we'll use that to select the
-    // element in accordance with best practices:
-    // https://on.cypress.io/selecting-elements
     cy.get('[data-test=new-todo]').type(`${newItem}{enter}`);
 
     // Now that we've typed our new item, let's check that it actually was added to the list.
