@@ -1,5 +1,6 @@
 describe('Home', () => {
   it('check for multi viewport', () => {
+    //this is to make view port change and see mobile view
     cy.visit('http://localhost:3000/');
 
     cy.viewport('macbook-15');
