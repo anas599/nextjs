@@ -23,7 +23,7 @@ async function handler(req, res) {
       },
     });
   } else {
-    res.status(405).end(); // Method Not Allowed
+    res.status(405).end();
   }
 }
 export default handler;
