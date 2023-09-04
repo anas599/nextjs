@@ -19,10 +19,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       res.status(200).json(voteup);
     } catch (error) {
       console.error('Failed to vote up:', error);
-      // if (error.response) {
-      //   console.error('Response status:', error.response.status);
-      //   console.error('Response body:', error.response.data);
-      // }
       res.status(500).json({ error: 'Unable to vote up coin comment.' });
     }
   } else {
