@@ -12,17 +12,17 @@ const nextConfig = {
   },
   images: {
     domains: [
-      'assets.coingecko.com',
-      'lh3.googleusercontent.com',
-      's2.coinmarketcap.com',
-      'avatars.githubusercontent.com',
+      "coin-images.coingecko.com",
+      "lh3.googleusercontent.com",
+      "s2.coinmarketcap.com",
+      "avatars.githubusercontent.com",
     ],
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'assets.coingecko.com',
-        port: '',
-        pathname: '/coins/images/**',
+        protocol: "https",
+        hostname: "assets.coingecko.com",
+        port: "",
+        pathname: "/coins/images/**",
       },
     ],
   },
